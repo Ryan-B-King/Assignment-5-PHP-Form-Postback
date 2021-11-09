@@ -1,12 +1,27 @@
 <?php
 
-
-    $msg = '';
+    $msg = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
 
+        $name       = htmlspecialchars($_POST['name']);
+        $email      = htmlspecialchars($_POST['email']);
+        $phone      = htmlspecialchars($_POST['phone']);
+        $heard      = $_POST['heard'];
+        $comments   = htmlspecialchars($_POST['comments']);
 
+
+
+        $msg        = "You entered the following information:<br>\n\r";
+        $msg       .= "\t\t\t Name : $name<br>\n\r";
+        $msg       .= "\t\t\t Email : $email<br>\n\r";
+        $msg       .= "\t\t\t Phone : $phone<br>\n\r";
+        $msg       .= "\t\t\t How you heard about us : $heard<br>\n\r";
+        $msg       .= "\t\t\t Comments : $comments<br>\n\r";
         
+            // print_r($_POST);
+
+
     }
 
 
@@ -30,7 +45,7 @@
     <main>
         <h1>Account Sign Up</h1>
 
-        <?php print $msg;?>
+        <p style="color:red";><?php print $msg?></p>
 
         <form action=""<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 
