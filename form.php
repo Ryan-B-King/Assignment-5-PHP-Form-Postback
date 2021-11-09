@@ -1,3 +1,18 @@
+<?php
+
+
+    $msg = '';
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+
+
+        
+    }
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +24,15 @@
 
 <body>
     <header>
-        <h1>Account Sign Up</h1>
+       
     </header>
 
     <main>
-        <form action="" method="post">
+        <h1>Account Sign Up</h1>
+
+        <?php print $msg;?>
+
+        <form action=""<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 
             <fieldset>
                 <legend>Account Information</legend>
